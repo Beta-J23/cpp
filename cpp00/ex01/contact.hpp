@@ -1,40 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alpelliz <alpelliz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 14:02:15 by alpelliz          #+#    #+#             */
-/*   Updated: 2024/01/15 14:02:19 by alpelliz         ###   ########.fr       */
+/*   Created: 2024/01/17 09:46:49 by alpelliz          #+#    #+#             */
+/*   Updated: 2024/01/17 11:34:28 by alpelliz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-int main(int argc, char **argv)
-{
-	if (argc == 1)
-	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-		return (0);
-	}
-	int 	i;
-	int		j;
-	j = 1;
-	i = 0;
-	while (j < argc)
-	{
-		while (argv[j][i] != '\0')
-		{
-			if (argv[j][i] >= 97 && argv[j][i] <= 122)
-				argv[j][i] = (argv[j][i] - 32);
-			std::cout <<  argv[j][i];
-			i++;
+class contact{
+	public:
+		std::string		first_name;
+		std::string		last_name;
+		std::string		nickname;
+		std::string		phone_number;
+		std::string		darkest_secret;
+		
+		void print_contact() {
+			std::cout << "contact name: " << first_name;
 		}
-		i = 0;
-		j++;
-	}
-	std::cout << '\n';
-	return (0);
-}
+};

@@ -5,16 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: alpelliz <alpelliz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/01/15 14:02:09 by alpelliz          #+#    #+#              #
-#    Updated: 2024/01/15 14:02:23 by alpelliz         ###   ########.fr        #
+#    Created: 2024/01/15 14:01:52 by alpelliz          #+#    #+#              #
+#    Updated: 2024/01/17 11:15:53 by alpelliz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS			= megaphone.cpp
-OBJS			= $(SRCS:.c=.o)
-TARGET			= megaphone
 
-CC				= c++ -g
+
+SRCS			= phonebook.cpp utils.cpp
+OBJS			= $(SRCS:.c=.o)
+TARGET			= Phonebook
+
+CC				= c++
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror
 
@@ -28,7 +30,7 @@ $(TARGET): $(SRCS)
 
 clean:
 	@$(RM) $(TARGET)
-	@printf 'clean: megaphone executable succesfully removed\n'
+	@printf 'clean: phonebook executable succesfully removed\n'
 
 re: clean all
 
