@@ -6,13 +6,13 @@
 #    By: alpelliz <alpelliz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/15 14:01:52 by alpelliz          #+#    #+#              #
-#    Updated: 2024/01/17 11:15:53 by alpelliz         ###   ########.fr        #
+#    Updated: 2024/01/17 18:14:47 by alpelliz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 
-SRCS			= phonebook.cpp utils.cpp
+SRCS			= main.cpp phonebook.cpp utils.cpp
 OBJS			= $(SRCS:.c=.o)
 TARGET			= Phonebook
 
