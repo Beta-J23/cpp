@@ -6,7 +6,7 @@
 #    By: alpelliz <alpelliz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/15 14:01:52 by alpelliz          #+#    #+#              #
-#    Updated: 2024/01/17 18:14:47 by alpelliz         ###   ########.fr        #
+#    Updated: 2024/01/18 09:50:21 by alpelliz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ TARGET			= Phonebook
 
 CC				= c++
 RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror
+CFLAGS			= -Wall -Wextra -Werror -std=c++98
 
 all: $(TARGET)
 

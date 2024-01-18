@@ -6,7 +6,7 @@
 /*   By: alpelliz <alpelliz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 18:12:11 by alpelliz          #+#    #+#             */
-/*   Updated: 2024/01/17 18:13:55 by alpelliz         ###   ########.fr       */
+/*   Updated: 2024/01/18 12:10:31 by alpelliz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int main()
 	int i = 0;
 	phonebook contact;
 	std::string input;
-
 	contact.total_contact = 0;
 	std::cout << "Welcome to the phonebook!. Enter: \n \
 	ADD to save a new contact; \n \
@@ -26,7 +25,7 @@ int main()
 	while(1)
 	{
 		std::cout << "\n    Main Menu, press ADD || SEARCH || EXIT   \n" << std::endl;
-		std::cin >> input;
+		std::getline(std::cin, input);
 		if (input == "ADD")
 		{
 			if (i == 8)

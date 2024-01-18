@@ -6,27 +6,49 @@
 /*   By: alpelliz <alpelliz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:01:37 by alpelliz          #+#    #+#             */
-/*   Updated: 2024/01/17 18:41:15 by alpelliz         ###   ########.fr       */
+/*   Updated: 2024/01/18 12:10:15 by alpelliz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 
+std::string empty_checker(std::string name)
+{
+	std::string field;
+	int x = 0;
+	while (x == 0)
+	{
+		std::getline(std::cin, field);
+		if (name == "Phone number:" && number_recognizer(field) == 1)
+		{
+			std::cout << "Only numbers in phone numbers please retype" << std::endl;
+			std::cout << name << std::endl;
+			x = 0;
+		}
+		else if (ft_strlen(field) == 0)
+		{	
+			std::cout << "field cannot be empty, please retype." <<std::endl;
+			std::cout << name <<std::endl;
+			x = 0;
+		}
+		else
+			x = 1;
+	}
+	return(field);
+}
+
 int add_routine(phonebook *pb, int i)
 {
-	std::string fit;
-	std::getline(std::cin, fit);
 	std::cout << "First name: " << std::endl;
-	std::getline(std::cin, pb->contact[i].first_name); 
-	//std::cout << std::endl;
-	std::cout << "last name: " << std::endl;
-	std::getline(std::cin, pb->contact[i].last_name);
-	std::cout << "nickname: " << std::endl;
-	std::getline(std::cin, pb->contact[i].nickname);
-	std::cout << "phone number: " << std::endl;
-	std::getline(std::cin, pb->contact[i].phone_number);
-	std::cout << "darkest secret: " << std::endl;
-	std::getline(std::cin, pb->contact[i].darkest_secret);
+	pb->contact[i].first_name = empty_checker("First name:");
+	std::cout << "Last name: " << std::endl;
+	pb->contact[i].last_name = empty_checker("Last name:");
+	std::cout << "Nickname: " << std::endl;
+	pb->contact[i].nickname = empty_checker("Nickname:");
+	std::cout << "Phone number: " << std::endl;
+	pb->contact[i].phone_number = empty_checker("Phone number:");
+	std::cout << "Darkest secret: " << std::endl;
+	pb->contact[i].darkest_secret = empty_checker("Darkest secret:");
 	return (0);
 }
 
