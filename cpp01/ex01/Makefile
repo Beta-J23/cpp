@@ -6,15 +6,15 @@
 #    By: alpelliz <alpelliz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/15 14:02:09 by alpelliz          #+#    #+#              #
-#    Updated: 2024/01/18 16:21:27 by alpelliz         ###   ########.fr        #
+#    Updated: 2024/01/18 17:20:44 by alpelliz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS			= megaphone.cpp
+SRCS			= main.cpp Zombie.cpp zombieHorde.cpp
 OBJS			= $(SRCS:.c=.o)
-TARGET			= megaphone
+TARGET			= theHorde
 
-CC				= c++
+CC				= c++ -g
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -std=c++98
 
@@ -28,7 +28,7 @@ $(TARGET): $(SRCS)
 
 clean:
 	@$(RM) $(TARGET)
-	@printf 'clean: megaphone executable succesfully removed\n'
+	@printf 'clean: executable succesfully removed\n'
 
 re: clean all
 

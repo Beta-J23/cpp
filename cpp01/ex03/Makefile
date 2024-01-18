@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: alpelliz <alpelliz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/01/15 14:02:09 by alpelliz          #+#    #+#              #
-#    Updated: 2024/01/18 16:21:27 by alpelliz         ###   ########.fr        #
+#    Created: 2024/01/18 18:08:06 by alpelliz          #+#    #+#              #
+#    Updated: 2024/01/18 18:08:11 by alpelliz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS			= megaphone.cpp
+SRCS			=  main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 OBJS			= $(SRCS:.c=.o)
-TARGET			= megaphone
+TARGET			= Unnecesary_Violence
 
-CC				= c++
+CC				= c++ -g
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -std=c++98
 
@@ -28,7 +28,7 @@ $(TARGET): $(SRCS)
 
 clean:
 	@$(RM) $(TARGET)
-	@printf 'clean: megaphone executable succesfully removed\n'
+	@printf 'clean: executable succesfully removed\n'
 
 re: clean all
 
