@@ -6,7 +6,7 @@
 /*   By: alpelliz <alpelliz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 14:01:37 by alpelliz          #+#    #+#             */
-/*   Updated: 2024/01/18 12:10:15 by alpelliz         ###   ########.fr       */
+/*   Updated: 2024/01/19 09:55:49 by alpelliz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int search_routine(phonebook *pb)
 		j++;
 	}
 	std::cout << "insert index number to see contact details" << std::endl;
-	std::cin >> in;
+	std::getline(std::cin, in);
 	if (std::cin.fail()) {
 			std::cin.clear();
 			std::cin.ignore();
@@ -79,9 +79,7 @@ int search_routine(phonebook *pb)
 	while (x < 1 || x > 8)
 	{
 		std::cout << "Insert a number beetween 1 and 8" << std::endl;
-		std::cin >> in;
-		std::cin.clear();
-		std::cin.ignore(10000, '\n');
+		std::getline(std::cin, in);
 		if(ft_strlen(in) == 1 && (in[0] > 48 && in[0] < 57))
 		{
 			x = in[0] - 48;
