@@ -5,14 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: alpelliz <alpelliz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/01/15 14:02:09 by alpelliz          #+#    #+#              #
-#    Updated: 2024/01/18 09:50:08 by alpelliz         ###   ########.fr        #
+#    Created: 2024/01/19 16:41:27 by alpelliz          #+#    #+#              #
+#    Updated: 2024/01/19 16:41:28 by alpelliz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS			= megaphone.cpp
+
+
+SRCS			= main.cpp
 OBJS			= $(SRCS:.c=.o)
-TARGET			= megaphone
+TARGET			= sed
 
 CC				= c++ -g
 RM				= rm -f
@@ -28,7 +30,7 @@ $(TARGET): $(SRCS)
 
 clean:
 	@$(RM) $(TARGET)
-	@printf 'clean: megaphone executable succesfully removed\n'
+	@printf 'clean: executable succesfully removed\n'
 
 re: clean all
 

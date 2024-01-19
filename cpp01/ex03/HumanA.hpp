@@ -6,20 +6,21 @@
 /*   By: alpelliz <alpelliz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 18:08:15 by alpelliz          #+#    #+#             */
-/*   Updated: 2024/01/19 12:54:29 by alpelliz         ###   ########.fr       */
+/*   Updated: 2024/01/19 15:48:58 by alpelliz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Weapon.hpp>
+#include "Weapon.hpp"
 
 class HumanA{
 	private:
-		Weapon _weapon;
-		std::string name;
+		std::string _name;
+		Weapon &_weapon;
 	public:
 	HumanA();
-	HumanA(std::string weapontype, Weapon weptype);
+	HumanA(std::string name, Weapon &weptype);
 	~HumanA();
-	void setType();
+	void setname(std::string name);
+	std::string getname();
 	void attack();
 };
