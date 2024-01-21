@@ -6,13 +6,13 @@
 /*   By: alpelliz <alpelliz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 16:12:34 by alpelliz          #+#    #+#             */
-/*   Updated: 2024/01/20 17:01:59 by alpelliz         ###   ########.fr       */
+/*   Updated: 2024/01/20 18:12:22 by alpelliz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Fixed.hpp"
 
-Fixed::Fixed(void) : _fixedPointValue(0) {
+Fixed::Fixed(void) : _fixedPointValue (0) {
     std::cout << "this is Default constructor" << std::endl;
 }
 

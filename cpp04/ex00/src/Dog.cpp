@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alpelliz <alpelliz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/20 16:43:18 by alpelliz          #+#    #+#             */
-/*   Updated: 2024/01/20 18:08:42 by alpelliz         ###   ########.fr       */
+/*   Created: 2024/01/21 16:01:43 by alpelliz          #+#    #+#             */
+/*   Updated: 2024/01/21 16:51:33 by alpelliz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/Fixed.hpp"
+#include "../includes/Dog.hpp"
 
-int main( void ) {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
-	return 0;
+Dog::Dog() : Animal("Dog"){
+    std::cout << _type << "default constructor called" << std::endl;
+}
+
+Dog::~Dog()
+{
+	std::cout << _type << " have been destroyed!!!" << std::endl;
+}
+
+void Dog::makeSound()const{
+	std::cout << "Ti dico bau" << std::endl;
+	system("afplay sound/dog.mp3");
 }

@@ -5,22 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: alpelliz <alpelliz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/20 16:43:18 by alpelliz          #+#    #+#             */
-/*   Updated: 2024/01/20 18:08:42 by alpelliz         ###   ########.fr       */
+/*   Created: 2024/01/21 10:03:31 by alpelliz          #+#    #+#             */
+/*   Updated: 2024/01/21 12:43:56 by alpelliz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/Fixed.hpp"
+#include "includes/ClapTrap.hpp"
 
-int main( void ) {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
-	return 0;
+int main()
+{
+	ClapTrap Pippo("Pippo");
+	ClapTrap Jack("Jack");
+
+	while(Jack.get_hit_points() > 0)
+	{
+		Pippo.attack(Jack.getname());
+		Jack.takeDamage(Pippo.get_attack_damage());
+	}
+	Pippo.beRepaired(1);
+	std::cout << "Pippo won, but in the next line will be equally DESTROOOOOOYED!!!" << std::endl;
+	return(0);
 }
+
