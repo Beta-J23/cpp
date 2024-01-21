@@ -6,13 +6,14 @@
 /*   By: alpelliz <alpelliz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 16:01:46 by alpelliz          #+#    #+#             */
-/*   Updated: 2024/01/21 16:52:49 by alpelliz         ###   ########.fr       */
+/*   Updated: 2024/01/21 17:30:03 by alpelliz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/Animal.hpp"
 #include "includes/Dog.hpp"
 #include "includes/Cat.hpp"
+#include "includes/Wrong_Cat.hpp"
 
 int main()
 {
@@ -27,5 +28,14 @@ int main()
 	delete meta;
 	delete i;
 	delete j;
+
+	const Wrong_Animal* metak = new Wrong_Animal();
+	const Wrong_Animal* k = new Wrong_Cat();
+	std::cout << k->getType() << " " << std::endl;
+	k->makeSound(); //will output the Wrong_cat sound!
+	metak->makeSound();
+	delete k;
+	delete metak;
+
 	return 0;
 }
