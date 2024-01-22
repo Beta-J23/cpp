@@ -6,14 +6,14 @@
 #    By: alpelliz <alpelliz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/20 16:02:43 by alpelliz          #+#    #+#              #
-#    Updated: 2024/01/21 16:02:45 by alpelliz         ###   ########.fr        #
+#    Updated: 2024/01/22 12:42:44 by alpelliz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-SRCS			= main.cpp src/ClapTrap.cpp
+SRCS			= main.cpp src/Animal.cpp src/Wrong_Animal.cpp src/Dog.cpp src/Cat.cpp src/Wrong_Cat.cpp src/Brain.cpp
 OBJS			= $(SRCS:.c=.o)
-TARGET			= ClapTrap
+TARGET			= Abstract
 
 CC				= c++
 RM				= rm -f
