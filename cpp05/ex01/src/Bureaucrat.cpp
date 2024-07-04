@@ -6,7 +6,7 @@
 /*   By: alpelliz <alpelliz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 15:03:41 by alpelliz          #+#    #+#             */
-/*   Updated: 2024/07/04 18:47:20 by alpelliz         ###   ########.fr       */
+/*   Updated: 2024/07/04 19:01:40 by alpelliz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,6 @@ void Bureaucrat::decrementGrade()
     std::cout << getName() << " new grade is " << getGrade() << std::endl;
 }
 
-
-
 Bureaucrat::Bureaucrat(Bureaucrat &bureObj):_name(bureObj._name), _grade(bureObj._grade)
 {
     std::cout << "Cloned Bureaucrat " << getName() <<  "created" << std::endl;
@@ -84,4 +82,13 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 std::ostream &operator <<(std::ostream &os, const Bureaucrat &obj) {
     os << obj.getName() << ", bureaucrat grade " << obj.getGrade();
     return os;
+}
+
+void Bureaucrat::signForm()
+{
+    if Form::getSigned() == true && _grade <= Form::getGradeToSign()
+        std::cout << getName() << " signed " << Form::getName() << std::endl;
+    else
+        std::cout << getName() << " cannot sign " << Form::getName() << " because grade" << Bureaucrat::getGrade() << "is too low" << std::endl;
+    
 }

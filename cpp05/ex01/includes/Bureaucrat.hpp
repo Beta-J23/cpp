@@ -6,7 +6,7 @@
 /*   By: alpelliz <alpelliz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 15:03:24 by alpelliz          #+#    #+#             */
-/*   Updated: 2024/07/04 17:40:05 by alpelliz         ###   ########.fr       */
+/*   Updated: 2024/07/04 18:56:24 by alpelliz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ class Bureaucrat {
 		int getGrade() const;
 		void incrementGrade();
 		void decrementGrade();
+		void signForm();
 
 	class GradeTooHighException: public std::exception
 	{
