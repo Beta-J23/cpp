@@ -6,20 +6,21 @@
 /*   By: alpelliz <alpelliz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 15:03:41 by alpelliz          #+#    #+#             */
-/*   Updated: 2024/07/04 19:01:40 by alpelliz         ###   ########.fr       */
+/*   Updated: 2024/07/24 18:12:36 by alpelliz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Bureaucrat.hpp"
+#include "../includes/Form.hpp"
 
-Bureaucrat::Bureaucrat():_name("Ale"), _grade(150)
+Bureaucrat::Bureaucrat():_name("impiegato 1"), _grade(150)
 {
     std::cout << "Bureaucrat default " << getName() <<  "created" << std::endl;
 }
 
 Bureaucrat::~Bureaucrat()
 {
-    std::cout << getName() << " Bureaucrat destroyed" << std::endl;
+    std::cout << getName() << " Bureaucrat has finished his job for today" << std::endl;
 }
 
 // Bureaucrat::Bureaucrat(Bureaucrat &bureObj):_name(bureObj._name), _grade(bureObj._grade)
@@ -33,7 +34,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade):_name(name), _grade(grade)
         throw GradeTooHighException();
     else if (grade > 150)
         throw GradeTooLowException();
-    std::cout << "Bureaucrat " << _name <<  " created" << std::endl;
+    std::cout << "Bureaucrat " << _name <<  " arrived to office" << std::endl;
 }
 
 std::string Bureaucrat::getName() const
@@ -84,11 +85,10 @@ std::ostream &operator <<(std::ostream &os, const Bureaucrat &obj) {
     return os;
 }
 
-void Bureaucrat::signForm()
+void Bureaucrat::signForm(Form &f)
 {
-    if Form::getSigned() == true && _grade <= Form::getGradeToSign()
-        std::cout << getName() << " signed " << Form::getName() << std::endl;
+    if (f.getSigned() == false && _grade <= f.getGradeToSign())
+        std::cout << getName() << " signed " << f.getName() << std::endl;
     else
-        std::cout << getName() << " cannot sign " << Form::getName() << " because grade" << Bureaucrat::getGrade() << "is too low" << std::endl;
-    
+        std::cout << getName() << " could not sign " << f.getName() << " because grade " << Bureaucrat::getGrade() << " is too low" << std::endl;
 }
