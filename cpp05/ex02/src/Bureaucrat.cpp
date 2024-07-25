@@ -6,7 +6,7 @@
 /*   By: alpelliz <alpelliz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 15:03:41 by alpelliz          #+#    #+#             */
-/*   Updated: 2024/07/24 18:29:41 by alpelliz         ###   ########.fr       */
+/*   Updated: 2024/07/25 19:49:24 by alpelliz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,6 @@ Bureaucrat::~Bureaucrat()
 {
     std::cout << getName() << " Bureaucrat has finished his job for today" << std::endl;
 }
-
-// Bureaucrat::Bureaucrat(Bureaucrat &bureObj):_name(bureObj._name), _grade(bureObj._grade)
-// {
-//     std::cout << "Bureaucrat " << _name <<  "created" << std::endl;
-// }
 
 Bureaucrat::Bureaucrat(std::string name, int grade):_name(name), _grade(grade)
 {
@@ -68,11 +63,6 @@ Bureaucrat::Bureaucrat(Bureaucrat &bureObj):_name(bureObj._name), _grade(bureObj
     std::cout << "Cloned Bureaucrat " << getName() <<  "created" << std::endl;
 }
 
-// Bureaucrat::Bureaucrat(const std::string& name, int grade):_name(name), _grade(grade)
-// {
-    
-// }
-
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 {
     if (this == &other)
@@ -85,10 +75,23 @@ std::ostream &operator <<(std::ostream &os, const Bureaucrat &obj) {
     return os;
 }
 
-void Bureaucrat::signForm(Form &f)
+void Bureaucrat::signForm(AForm &f)
 {
     if (f.getSigned() == false && _grade <= f.getGradeToSign())
         std::cout << getName() << " signed " << f.getName() << std::endl;
     else
         std::cout << getName() << " could not sign " << f.getName() << " because grade " << Bureaucrat::getGrade() << " is too low" << std::endl;
+}
+
+void Bureaucrat::executeForm(AForm const &form)
+{
+    if (_grade > form.getGradeToExecute())
+        std::cout << getName() + "Could not execute" <<  std::endl;
+    else 
+    {   
+        form.execute(*this);
+        std::cout << getName() << " executed " << form.getName() << std::endl;
+    }
+    
+    
 }

@@ -6,7 +6,7 @@
 /*   By: alpelliz <alpelliz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 18:28:53 by alpelliz          #+#    #+#             */
-/*   Updated: 2024/07/24 18:29:34 by alpelliz         ###   ########.fr       */
+/*   Updated: 2024/07/25 19:00:49 by alpelliz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
     
 // }
 
-Form::Form() : _name("tasse"), _gradeToSign(50), _gradeToExecute(75)
+AForm::AForm() : _name("tasse"), _gradeToSign(50), _gradeToExecute(75)
 {
 	_signed = false;
 	std::cout << getName() << " has been created." << std::endl;
 }
 
-Form::Form(std::string name, const int gradeToSign, const int gradeToExecute) : _name(name), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
+AForm::AForm(std::string name, const int gradeToSign, const int gradeToExecute) : _name(name), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
 //alternative constructor assegnation
 {
     if (gradeToSign < 1 || gradeToExecute < 1)
@@ -36,55 +36,58 @@ Form::Form(std::string name, const int gradeToSign, const int gradeToExecute) : 
     if (gradeToExecute > 150)
         throw GradeTooLowException("Lowest grade to execute " + getName() + " is 150");
     _signed = false;
-    std::cout << "Form " << _name << " created" << std::endl;
+    std::cout << "AForm " << _name << " created" << std::endl;
 }
 
-Form::~Form()
+AForm::~AForm()
 {
-    std::cout << "Form " << getName() << " Destroyed" << std::endl;
+    std::cout << "AForm " << getName() << " Destroyed" << std::endl;
 }
 
-Form::Form(Form &FormObj):_name(FormObj._name), _gradeToSign(FormObj._gradeToSign), _gradeToExecute(FormObj._gradeToExecute)
+AForm::AForm(const AForm &FormObj):_name(FormObj._name), _gradeToSign(FormObj._gradeToSign), _gradeToExecute(FormObj._gradeToExecute)
 {
-    std::cout << "Cloned Form " << _name << " created" << std::endl;    
+    std::cout << "Cloned AForm " << _name << " created" << std::endl;    
 }
 
-Form &Form::operator=(const Form &other)
+AForm &AForm::operator=(const AForm &other)
 {
     if (this != &other)
         this->_signed = other._signed;
     return *this;
 }
 
-std::string Form::getName() const
+std::string AForm::getName() const
 {
     return (_name);
 }
 
-bool Form::getSigned() const
+bool AForm::getSigned() const
 {
     return (_signed);
 }
 
-int Form::getGradeToSign() const
+int AForm::getGradeToSign() const
 {
     return (_gradeToSign);
 }
 
-int Form::getGradeToExecute() const
+int AForm::getGradeToExecute() const
 {
     return (_gradeToExecute);
 }
 
-void Form::beSigned(const Bureaucrat &b)
+void AForm::beSigned(const Bureaucrat &b)
 {
     if (b.getGrade() > _gradeToSign)
         throw GradeTooLowException(b.getName());
     else
         _signed = true;
 }
-std::ostream &operator <<(std::ostream &os, Form &obj)
+std::ostream &operator <<(std::ostream &os, AForm &obj)
 {
-    os << "Form " << obj.getName() << " is signed: " << obj.getSigned() << ", and requires grade " << obj.getGradeToSign() << " to sign, and " << obj.getGradeToExecute() << " to execute.";
+    os << "AForm " << obj.getName() << " is signed: " << obj.getSigned() << ", and requires grade " << obj.getGradeToSign() << " to sign, and " << obj.getGradeToExecute() << " to execute.";
     return os;
 }
+
+// virtual void AForm::execute(executor)
+// {}

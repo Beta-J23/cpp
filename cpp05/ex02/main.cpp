@@ -6,50 +6,38 @@
 /*   By: alpelliz <alpelliz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 15:04:12 by alpelliz          #+#    #+#             */
-/*   Updated: 2024/07/24 18:29:52 by alpelliz         ###   ########.fr       */
+/*   Updated: 2024/07/25 19:34:06 by alpelliz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "includes/Bureaucrat.hpp"
+#include "includes/Bureaucrat.hpp"
 #include "includes/AForm.hpp"
+#include "includes/ShrubberyCreationForm.hpp"
+#include "includes/RobotomyRequestForm.hpp"
+#include "includes/PresidentialPardonForm.hpp"
+#include <iostream>
 
 int main()
 {
-    try { 
-        Bureaucrat impiegato("Ugo", 50);
-        Form irpf;
-        Form formulario("ISEE", 50, 70);
-        std::cout << formulario << std::endl;
-        std::cout << irpf << std::endl;
-        impiegato.signForm(formulario);
-        // bureaucrat->incrementGrade();
-        formulario.beSigned(impiegato);
-    }
-    catch (Form::GradeTooHighException &e)
-    {
-        std::cout << e.what() << std::endl;
-    }
-    catch (Form::GradeTooLowException &e)
-    {
-        std::cout << e.what() << std::endl;
-    }
-
-    std::cout << std::endl;
-
-    try {
-        Bureaucrat impiegato2("Gino", 25);
-        Form formulario2("TAEG", 35, 70);
-        std::cout << formulario2 << std::endl;
-        impiegato2.signForm(formulario2);
-    }
-    catch (Form::GradeTooHighException &t)
-    {    
-        std::cout << t.what() << std::endl;
-    }
-    catch (Form::GradeTooLowException &t)
-    {    
-        std::cout << t.what() << std::endl;
-    }  
-    
-    return (0);
+   	try {
+		Bureaucrat signer("Lello", 5);
+		ShrubberyCreationForm tree("Happy");
+		RobotomyRequestForm robo("Brain");
+		PresidentialPardonForm zap("Tizio");
+		signer.signForm(tree);
+		signer.signForm(robo);
+		signer.signForm(zap);
+		signer.executeForm(tree);
+		signer.executeForm(robo);
+		signer.executeForm(zap);
+		signer.signForm(tree);
+		Bureaucrat executor("Gigi", 150);
+		robo.execute(executor);
+	}
+	catch (AForm::GradeTooHighException &e) {
+		std::cout << e.what() << std::endl;
+	}
+	catch (AForm::GradeTooLowException &e) {
+		std::cout << e.what() << std::endl;
+	}
 }
