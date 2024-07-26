@@ -6,7 +6,7 @@
 /*   By: alpelliz <alpelliz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 15:04:12 by alpelliz          #+#    #+#             */
-/*   Updated: 2024/07/24 18:23:07 by alpelliz         ###   ########.fr       */
+/*   Updated: 2024/07/26 13:29:26 by alpelliz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int main()
     std::cout << std::endl;
 
     try {
-        Bureaucrat impiegato2("Gino", 25);
+        Bureaucrat impiegato2("Gino", 40);
         Form formulario2("TAEG", 35, 70);
         std::cout << formulario2 << std::endl;
         impiegato2.signForm(formulario2);

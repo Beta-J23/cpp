@@ -6,16 +6,16 @@
 #    By: alpelliz <alpelliz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/21 16:01:50 by alpelliz          #+#    #+#              #
-#    Updated: 2024/07/26 10:33:13 by alpelliz         ###   ########.fr        #
+#    Updated: 2024/07/26 13:13:08 by alpelliz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 
 
-SRCS			= main.cpp src/Bureaucrat.cpp src/AForm.cpp src/ShrubberyCreationForm.cpp src/RobotomyRequestForm.cpp src/PresidentialPardonForm.cpp 
+SRCS			= main.cpp src/Bureaucrat.cpp src/AForm.cpp src/ShrubberyCreationForm.cpp src/RobotomyRequestForm.cpp src/PresidentialPardonForm.cpp src/Intern.cpp
 OBJS			= $(SRCS:.c=.o)
-TARGET			= 28C
+TARGET			= Intern
 PROJECT_FILES	= *shruberry
 
 CC				= g++

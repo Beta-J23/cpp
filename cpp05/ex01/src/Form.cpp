@@ -6,7 +6,7 @@
 /*   By: alpelliz <alpelliz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 18:28:53 by alpelliz          #+#    #+#             */
-/*   Updated: 2024/07/24 18:05:58 by alpelliz         ###   ########.fr       */
+/*   Updated: 2024/07/26 13:36:10 by alpelliz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,10 @@ void Form::beSigned(const Bureaucrat &b)
     if (b.getGrade() > _gradeToSign)
         throw GradeTooLowException(b.getName());
     else
+    {
         _signed = true;
+        std::cout << getName() + " is signed" << std::endl;
+    }
 }
 std::ostream &operator <<(std::ostream &os, Form &obj)
 {

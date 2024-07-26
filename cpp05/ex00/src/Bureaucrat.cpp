@@ -6,13 +6,13 @@
 /*   By: alpelliz <alpelliz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 15:03:41 by alpelliz          #+#    #+#             */
-/*   Updated: 2024/07/04 18:47:20 by alpelliz         ###   ########.fr       */
+/*   Updated: 2024/07/26 13:25:07 by alpelliz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat():_name("Ale"), _grade(150)
+Bureaucrat::Bureaucrat():_name("Gino"), _grade(150)
 {
     std::cout << "Bureaucrat default " << getName() <<  "created" << std::endl;
 }
@@ -21,11 +21,6 @@ Bureaucrat::~Bureaucrat()
 {
     std::cout << getName() << " Bureaucrat destroyed" << std::endl;
 }
-
-// Bureaucrat::Bureaucrat(Bureaucrat &bureObj):_name(bureObj._name), _grade(bureObj._grade)
-// {
-//     std::cout << "Bureaucrat " << _name <<  "created" << std::endl;
-// }
 
 Bureaucrat::Bureaucrat(std::string name, int grade):_name(name), _grade(grade)
 {
@@ -68,11 +63,6 @@ Bureaucrat::Bureaucrat(Bureaucrat &bureObj):_name(bureObj._name), _grade(bureObj
 {
     std::cout << "Cloned Bureaucrat " << getName() <<  "created" << std::endl;
 }
-
-// Bureaucrat::Bureaucrat(const std::string& name, int grade):_name(name), _grade(grade)
-// {
-    
-// }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 {
